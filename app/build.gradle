@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply from: '../dependencies.gradle'
 
 android {
     compileSdkVersion 30
@@ -26,12 +29,24 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation libs.kotlin_stdlib
+    implementation libs.core_ktx
+    implementation libs.appcompat
+    implementation libs.constraintlayout
+
+    implementation libs.hilt_android
+    implementation libs.hilt_android_compiler
+    implementation libs.hilt_lifecycle_viewmodel
+
+    implementation libs.retrofit
+    implementation libs.retrofit_converter_gson
+    implementation libs.okhttp3_logging_interceptor
+
+    kapt libs.hilt_compiler
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext_junit
+    androidTestImplementation libs.espresso_core
 
 }
