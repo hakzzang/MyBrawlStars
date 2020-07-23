@@ -1,0 +1,43 @@
+ext{
+    versions =  [
+            gradle : '4.0.1',
+            kotlin: '1.3.72',
+            ktx: '1.3.1',
+            appcompat : '1.1.0',
+            constraintlayout : '1.1.3',
+            hilt_compiler: '1.0.0-alpha02',
+            dagger : '2.28-alpha',
+            junit: '4.13',
+            ext_junit: '1.1.1',
+            espresso_core : '3.2.0',
+            retrofit : '2.7.1',
+            okhttp3_logging_interceptor: '4.5.0'
+    ]
+    libs =  [
+            //android-tools-gradle
+            gradle : "com.android.tools.build:gradle:${versions.gradle}",
+            //androidx-libraries
+            core_ktx : "androidx.core:core-ktx:${versions.ktx}",
+            appcompat:  "androidx.appcompat:appcompat:${versions.appcompat}",
+            constraintlayout:  "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+            //kotlin-libraries
+            kotlin_gradle_plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+            kotlin_stdlib : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+            //dagger-libraries
+            hilt_gradle_plugin: "com.google.dagger:hilt-android-gradle-plugin:${versions.dagger}",
+            hilt_android : "com.google.dagger:hilt-android:${versions.dagger}",
+            hilt_android_compiler : "com.google.dagger:hilt-android-compiler:${versions.dagger}",
+            hilt_lifecycle_viewmodel : "androidx.hilt:hilt-lifecycle-viewmodel:${versions.hilt_compiler}",
+            hilt_compiler : "androidx.hilt:hilt-compiler:${versions.hilt_compiler}",
+
+            //retrofit
+            retrofit:  "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            retrofit_converter_gson : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+            okhttp3_logging_interceptor : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp3_logging_interceptor}",
+
+            //test-libraries
+            junit : "junit:junit:${versions.junit}",
+            ext_junit : "androidx.test.ext:junit:${versions.ext_junit}",
+            espresso_core : "androidx.test.espresso:espresso-core:${versions.espresso_core}"
+    ]
+}
