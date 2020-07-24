@@ -42,6 +42,9 @@ dependencies {
     implementation libs.retrofit
     implementation libs.retrofit_converter_gson
     implementation libs.okhttp3_logging_interceptor
+    implementation libs.lifecycle_livedata_ktx
+    implementation libs.lifecycle_viewmodel_ktx
+    implementation libs.lifecycle_runtime_ktx
 
     kapt libs.hilt_compiler
 

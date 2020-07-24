@@ -3,6 +3,7 @@ ext{
             gradle : '4.0.1',
             kotlin: '1.3.72',
             ktx: '1.3.1',
+            lifecyclektx: '2.3.0-alpha06',
             appcompat : '1.1.0',
             constraintlayout : '1.1.3',
             hilt_compiler: '1.0.0-alpha02',
@@ -12,6 +13,7 @@ ext{
             espresso_core : '3.2.0',
             retrofit : '2.7.1',
             okhttp3_logging_interceptor: '4.5.0'
+
     ]
     libs =  [
             //android-tools-gradle
@@ -20,6 +22,9 @@ ext{
             core_ktx : "androidx.core:core-ktx:${versions.ktx}",
             appcompat:  "androidx.appcompat:appcompat:${versions.appcompat}",
             constraintlayout:  "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+            lifecycle_livedata_ktx:"androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecyclektx}",
+            lifecycle_viewmodel_ktx:"androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecyclektx}",
+            lifecycle_runtime_ktx : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecyclektx}",
             //kotlin-libraries
             kotlin_gradle_plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
             kotlin_stdlib : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
