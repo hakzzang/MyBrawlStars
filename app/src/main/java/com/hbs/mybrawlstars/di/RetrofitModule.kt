@@ -1,6 +1,7 @@
 package com.hbs.mybrawlstars.di
 
 import com.hbs.mybrawlstars.domain.remote.api.BrawlApi
+import com.hbs.mybrawlstars.domain.remote.api.BrawlApiResources
 import dagger.Provides
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -19,7 +20,7 @@ class RetrofitModule{
     @Singleton
     @Provides
     fun provideGsonConverterFactory() = GsonConverterFactory.create()
-    
+
     @Singleton
     @Provides
     fun provideOkHttpClient(): OkHttpClient = OkHttpClient
@@ -29,13 +30,14 @@ class RetrofitModule{
             level = HttpLoggingInterceptor.Level.BASIC
         }).build()
 
+
     @Singleton
     @Provides
     fun provideRetrofit(
         gsonConverterFactory: GsonConverterFactory,
         client:OkHttpClient
     ): Retrofit = Retrofit.Builder()
-        .baseUrl("")
+        .baseUrl(BrawlApiResources.BASE_URL)
         .addConverterFactory(gsonConverterFactory)
         .client(client)
         .build()

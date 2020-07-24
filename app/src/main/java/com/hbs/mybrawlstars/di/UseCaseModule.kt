@@ -1,7 +1,7 @@
 package com.hbs.mybrawlstars.di
 
 import com.hbs.mybrawlstars.domain.remote.repository.BrawlRepository
-import com.hbs.mybrawlstars.domain.remote.usecase.CharacterUseCaseImpl
+import com.hbs.mybrawlstars.domain.remote.usecase.PlayerInformationUseCaseImpl
 import dagger.Provides
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -13,5 +13,5 @@ import javax.inject.Singleton
 class UseCaseModule {
     @Provides
     @Singleton
-    fun provideCharacterUseCase(brawlRepository: BrawlRepository) = CharacterUseCaseImpl(brawlRepository)
+    fun provideCharacterUseCase(brawlRepository: BrawlRepository) = PlayerInformationUseCaseImpl(brawlRepository)
 }
