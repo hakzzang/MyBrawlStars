@@ -2,8 +2,8 @@ package com.hbs.mybrawlstars.di
 
 import com.hbs.mybrawlstars.domain.remote.api.BrawlApi
 import com.hbs.mybrawlstars.domain.remote.api.BrawlApiResources
+import dagger.Module
 import dagger.Provides
-import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.ConnectionPool
@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-@EntryPoint
+@Module
 @InstallIn(ApplicationComponent::class)
 class RetrofitModule{
     @Singleton
