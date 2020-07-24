@@ -1,12 +1,13 @@
 package com.hbs.mybrawlstars.domain.remote.usecase
 
 import com.hbs.mybrawlstars.domain.remote.repository.BrawlRepository
+import com.hbs.mybrawlstars.model.BrawlStarsPlayer
 import javax.inject.Inject
 
 interface PlayerInformationUseCase{
-    fun getPlayerInformation(playerTag : String)
+    suspend fun getBrawlStarsPlayer(playerTag : String) : BrawlStarsPlayer
 }
 
 class PlayerInformationUseCaseImpl @Inject constructor(private val brawlRepository: BrawlRepository) : PlayerInformationUseCase{
-    override fun getPlayerInformation(playerTag: String) = brawlRepository.getPlayerInformation(playerTag)
+    override suspend fun getBrawlStarsPlayer(playerTag: String): BrawlStarsPlayer = brawlRepository.getBrawlStarsPlayer(playerTag)
 }
