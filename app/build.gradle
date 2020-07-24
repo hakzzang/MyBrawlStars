@@ -25,28 +25,44 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     implementation libs.kotlin_stdlib
-    implementation libs.core_ktx
+
     implementation libs.appcompat
+    implementation libs.material
     implementation libs.constraintlayout
 
+    implementation libs.core_ktx
+    implementation libs.lifecycle_livedata_ktx
+    implementation libs.lifecycle_viewmodel_ktx
+    implementation libs.lifecycle_runtime_ktx
+    implementation libs.activity_ktx
+    implementation libs.fragment_ktx
+
     implementation libs.hilt_android
-    implementation libs.hilt_android_compiler
+
     implementation libs.hilt_lifecycle_viewmodel
+    kapt libs.hilt_android_compiler
+    kapt libs.hilt_compiler
 
     implementation libs.retrofit
     implementation libs.retrofit_converter_gson
     implementation libs.okhttp3_logging_interceptor
-    implementation libs.lifecycle_livedata_ktx
-    implementation libs.lifecycle_viewmodel_ktx
-    implementation libs.lifecycle_runtime_ktx
-
-    kapt libs.hilt_compiler
 
     testImplementation libs.junit
     androidTestImplementation libs.ext_junit
