@@ -15,8 +15,8 @@ ext{
             ext_junit: '1.1.1',
             espresso_core : '3.2.0',
             retrofit : '2.9.0',
-            okhttp3_logging_interceptor: '4.5.0'
-
+            okhttp3_logging_interceptor: '4.5.0',
+            androidx_test: '1.2.0'
     ]
     libs =  [
             //android-tools-gradle
@@ -25,6 +25,9 @@ ext{
             appcompat:  "androidx.appcompat:appcompat:${versions.appcompat}",
             constraintlayout:  "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
             material: "com.google.android.material:material:${versions.material}",
+            test_runner : "androidx.test:runner:${versions.androidx_test}",
+            test_rule : "androidx.test:rules:${versions.androidx_test}",
+            test_core : "androidx.test:core:${versions.androidx_test}",
             //androidx-ktx-libraries
             core_ktx : "androidx.core:core-ktx:${versions.ktx}",
             lifecycle_livedata_ktx:"androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecyclektx}",
@@ -36,12 +39,14 @@ ext{
             //kotlin-libraries
             kotlin_gradle_plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
             kotlin_stdlib : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+
             //dagger-libraries
             hilt_gradle_plugin: "com.google.dagger:hilt-android-gradle-plugin:${versions.dagger}",
             hilt_android : "com.google.dagger:hilt-android:${versions.dagger}",
             hilt_lifecycle_viewmodel : "androidx.hilt:hilt-lifecycle-viewmodel:${versions.hilt_compiler}",
             hilt_android_compiler : "com.google.dagger:hilt-android-compiler:${versions.dagger}",
             hilt_compiler : "androidx.hilt:hilt-compiler:${versions.hilt_compiler}",
+            hilt_android_testing : "com.google.dagger:hilt-android-testing:${versions.dagger}",
 
             //retrofit
             retrofit:  "com.squareup.retrofit2:retrofit:${versions.retrofit}",

@@ -15,8 +15,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.hbs.mybrawlstars.CustomTestRunner"
     }
 
     buildTypes {
@@ -35,6 +34,9 @@ android {
     buildFeatures{
         dataBinding = true
         viewBinding = true
+    }
+    hilt {
+        enableTransformForLocalTests = true
     }
 }
 
@@ -55,10 +57,15 @@ dependencies {
     implementation libs.fragment_ktx
 
     implementation libs.hilt_android
-
     implementation libs.hilt_lifecycle_viewmodel
+
     kapt libs.hilt_android_compiler
     kapt libs.hilt_compiler
+    kaptTest libs.hilt_android_compiler
+    kaptAndroidTest libs.hilt_android_compiler
+    testImplementation libs.hilt_android_testing
+    androidTestImplementation libs.hilt_android_testing
+
 
     implementation libs.retrofit
     implementation libs.retrofit_converter_gson
@@ -67,5 +74,7 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext_junit
     androidTestImplementation libs.espresso_core
-
+    androidTestImplementation libs.test_runner
+    androidTestImplementation libs.test_rule
+    androidTestImplementation libs.test_core
 }
