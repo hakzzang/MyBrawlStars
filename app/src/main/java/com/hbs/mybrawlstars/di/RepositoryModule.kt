@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
-class RepositoryModule {
+object RepositoryModule {
     @Provides
     @Singleton
     fun provideBrawlRepository(brawlApi: BrawlApi):BrawlRepository = BrawlRepositoryImpl(brawlApi)

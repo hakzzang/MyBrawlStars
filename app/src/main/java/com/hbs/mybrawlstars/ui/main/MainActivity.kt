@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-    private val mainViewModel by viewModels<MainViewModel>()
+    val mainViewModel by viewModels<MainViewModel>()
 
     override fun bindBinding() = ActivityMainBinding.inflate(layoutInflater)
 
@@ -43,16 +43,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private fun showPlayerInformation(binding: ActivityMainBinding, apiResult: ApiResult<BrawlStarsPlayer>){
         binding.tvInformationApiTest.text = when(apiResult){
             is ApiResult.Loading ->{
-                "LOADING..."
+                "LOADING"
             }
             is ApiResult.Success->{
-                "SUCCESS..."
+                apiResult.status.name
             }
-            is ApiResult.Error->{
-                apiResult.exception.message
+            is ApiResult.Error ->{
+                apiResult.status.name
+            }
+            is ApiResult.Fail->{
+                apiResult.throwable.message
+            }
+            is ApiResult.InternalError->{
+                apiResult.status.name
             }
         }
     }
-
-
 }
