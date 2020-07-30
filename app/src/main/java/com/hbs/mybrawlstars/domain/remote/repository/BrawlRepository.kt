@@ -1,11 +1,12 @@
 package com.hbs.mybrawlstars.domain.remote.repository
 
+import com.hbs.mybrawlstars.domain.remote.api.ApiResult
 import com.hbs.mybrawlstars.domain.remote.api.BrawlApi
 import com.hbs.mybrawlstars.model.BrawlStarsPlayer
 import javax.inject.Inject
 
 interface BrawlRepository{
-    suspend fun getBrawlStarsPlayer(playerTag:String) : BrawlStarsPlayer
+    suspend fun getBrawlStarsPlayer(playerTag:String) : ApiResult<BrawlStarsPlayer>
 }
 
 class BrawlRepositoryImpl @Inject constructor(private val brawlApi: BrawlApi) : BrawlRepository{
