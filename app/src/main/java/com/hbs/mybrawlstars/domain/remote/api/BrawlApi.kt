@@ -8,5 +8,5 @@ interface BrawlApi{
     @GET(BrawlApiResources.PLAYER_URL+"{playerTag}")
     suspend fun getBrawlStarsPlayer(
         @Path("playerTag") playerTag: String
-    ):BrawlStarsPlayer
+    ):ApiResult<BrawlStarsPlayer>
 }

@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
-class UseCaseModule {
+object UseCaseModule {
     @Provides
     @Singleton
     fun provideCharacterUseCase(brawlRepository: BrawlRepository) : PlayerInformationUseCase = PlayerInformationUseCaseImpl(brawlRepository)
